@@ -7,6 +7,14 @@ WORKSPACE=/tmp/workspace
 mkdir -p $WORKSPACE
 mkdir -p /work/artifact
 
+# libutempter
+git clone https://github.com/altlinux/libutempter
+cd libutempter/libutempter
+make
+make libutempter.a
+DESTDIR=/ make install
+cp libutempter.a /usr/lib/
+
 # tmux
 aa=$(curl -s "https://api.github.com/repos/tmux/tmux/releases/latest" | grep -Po '"tag_name": "\K[0-9a.]+')
 curl -sL $( curl -s "https://api.github.com/repos/tmux/tmux/releases/latest" | jq -r '.assets[] | select(.content_type == "application/x-gzip") | {browser_download_url}  | .browser_download_url ') | tar xv --gzip
