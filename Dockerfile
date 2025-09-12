@@ -12,7 +12,7 @@ RUN apk add --no-cache \
   python3-dev openssl-dev openssl-libs-static \
   git grep git curl libevent-dev libevent-static \
   ncurses-dev ncurses-static jq grep byacc bash \
-  utf8proc-dev libutempter libutempter-dev jemalloc-static jemalloc-dev
+  utf8proc-dev jemalloc-static jemalloc-dev
 
 ENV XZ_OPT=-e9
 COPY build-static-tmux.sh build-static-tmux.sh
