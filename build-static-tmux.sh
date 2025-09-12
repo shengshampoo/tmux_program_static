@@ -11,7 +11,6 @@ mkdir -p /work/artifact
 cd $WORKSPACE
 git clone https://github.com/altlinux/libutempter
 cd libutempter/libutempter
-make
 make libutempter.a
 DESTDIR=/ make install
 cp libutempter.a /usr/lib/
