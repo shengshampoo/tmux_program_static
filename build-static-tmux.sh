@@ -12,6 +12,7 @@ cd $WORKSPACE
 git clone https://github.com/altlinux/libutempter
 cd libutempter/libutempter
 make libutempter.a
+make
 DESTDIR=/ make install
 cp libutempter.a /usr/lib/
 
